@@ -20,7 +20,9 @@ module.exports = function(router) {
       .catch(err => errorHandler(err, req, res));
   });
   router.get('/api/photo/:_id', bearerAuth, (req, res) => {
-
+    return Photo.findById(req.params._id)
+      .then(photo => res.json(photo))
+      .catch(err => errorHandler(err, req, res));
   });
   router.get('/api/photo', bearerAuth, (req, res) => {
 
