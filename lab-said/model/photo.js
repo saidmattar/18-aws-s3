@@ -3,11 +3,14 @@
 const fs = require('fs');
 const del = require('del');
 const path = require('path');
-const Gallery = require('./gallery');
+
+//const Gallery = require('./gallery');
+
 const mongoose = require('mongoose');
 const tempDir = `${__dirname}/../temp`;
 const s3UploadProm = require('../lib/aws-s3');
-const debug = require('debug')('cfgram:Photo');
+
+//const debug = require('debug')('cfgram:Photo');
 
 const Photo = mongoose.Schema({
   name: { type: String, required: true },
